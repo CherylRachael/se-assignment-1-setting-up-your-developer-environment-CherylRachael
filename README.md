@@ -387,32 +387,19 @@ Once the installation is complete, click "Finish" to exit the Setup Wizard.
         Create a file named Dockerfile (no extension) and open it in a text editor. Add the following content:
         dockerfile
 
-# Use an official Python runtime as a parent image
-
+#Use an official Python runtime as a parent image
 FROM python:3.10-slim
-
-# Set the working directory in the container
-
+#Set the working directory in the container
 WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-
+#Copy the current directory contents into the container at /app
 ADD . /app
-
-# Install any needed packages specified in requirements.txt
-
+#Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Make port 80 available to the world outside this container
-
+#Make port 80 available to the world outside this container
 EXPOSE 80
-
-# Define environment variable
-
+#Define environment variable
 ENV NAME World
-
-# Run app.py when the container launches
-
+#Run app.py when the container launches
 CMD ["python", "app.py"]
 
 Build and Run Your Docker Image:
